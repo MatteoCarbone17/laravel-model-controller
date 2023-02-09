@@ -30,18 +30,23 @@
     <main>
         <div class="container">
             <div class="row">
-                @forelse ($movies as $movie)
-                <div class="card" style="width: 15rem;">
-                    <img class="card-img-top" src="" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">{{ $movie['title'] }}</h5>
-                      <h6 class="card-title">{{ $movie['original_title'] }}</h5>
-                      <p class="card-text"> {{ $movie['nationality'] }} |||  {{  $movie['date'] }} |||  {{  $movie['vote'] }}  </p>
+                    @forelse ($movies as $movie)
+                    <div class="card me-5 mb-5" style="width: 15rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">{{ $movie['title'] }}</h5>
+                          <h6 class="">{{ $movie['original_title'] }}</h5>
+                          <p class="card-text"> {{ $movie['nationality'] }}</p>
+                          <span>
+                            {{  $movie['date'] }}
+                          </span>
+                          <span>
+                            {{  $movie['vote'] }}
+                          </span>
+                        </div>
                     </div>
-                </div>
-                @empty
-                    <p>non ci sono film da mostrare</p>
-                @endforelse
+                    @empty
+                        <p>Mi disp non ci sono film da mostrare</p>
+                    @endforelse
             </div>
         </div>
     </main>
